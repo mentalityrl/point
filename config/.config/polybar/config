@@ -56,7 +56,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-separator = " | "
+separator = " * "
 
 ;colors
 background = ${colors.background}
@@ -64,19 +64,24 @@ foreground = ${colors.foreground}
 line-color = #f00
 
 ;font
-dpi = ${xrdb:Xft.dpi:-1}
-line-size = 1
 font-0 = Fira\ Code:pixelsize=10:weight=medium;3
 font-1 = Ionicons:pixelsize=10;4
 font-3 = "Siji"
 font-4 = Material Icons:pixelsize=8;3
+
+linecolor = #f00
+line-size = 40
+border-bottom-size = 2
+border-bottom-color = #333
+spacing = 1
+lineheight = 2
 
 ;cursor
 cursor-click = pointer
 cursor-scroll = ns-resize
 
 ;wm
-wm-restack = bspwm
+wm-restack = i3
 
 [bar/top]
 inherit = bar/base
@@ -88,7 +93,7 @@ tray-padding = 2
 ;modules
 modules-left = i3
 modules-center = date
-modules-right = battery2 battery1 backlight volume eth eth2 wlan wlan2
+modules-right = battery1 backlight volume eth wlan
 
 border-size = 0
 border-color = 
@@ -123,9 +128,9 @@ border-color =
 bottom = true
 
 ;modules
-modules-left = hostname info-hackspeed loadavg system-uptime-pretty
+modules-left = hostname filesystem
 modules-center = xwindow
-modules-right = redshift compton trash kernel
+;modules-right = redshift compton trash kernel
 
 
 ;----------------
@@ -146,19 +151,19 @@ type = internal/xworkspaces
 label-focused = "%name%"
 label-focused-background = #859900
 label-focused-foreground = #263238
-label-focused-underline= 
-label-focused-padding = 5
+label-focused-underline= #f00 
+label-focused-padding = 3
 
 label-occupied = "%name%"
-label-occupied-padding = 5
+label-occupied-padding = 3
 
 label-urgent = "%name%!"
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 5
+label-urgent-padding = 3
 
 label-empty = "%name%"
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 5
+label-empty-padding = 3
 
 [module/hostname]
 type = custom/script
@@ -192,25 +197,14 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /home
 
-label-mounted = "%mountpoint%: %free% / %total%"
+label-mounted = "%mountpoint%: %free%"
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
 
-ws-icon-default = 
-ws-icon-0 = 1
-ws-icon-1 = 2
-ws-icon-2 = 3
-ws-icon-3 = 4
-ws-icon-4 = 5
-ws-icon-5 = 6
-ws-icon-6 = 7
-ws-icon-7 = 8
-ws-icon-8 = 9
 
 label-focused = %name%
 label-focused-background = #859900
@@ -235,6 +229,17 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+ws-icon-default = 
+ws-icon-0 = term
+ws-icon-1 = brow
+ws-icon-2 = chat
+ws-icon-3 = file
+ws-icon-4 = 5
+ws-icon-5 = 6
+ws-icon-6 = 7
+ws-icon-7 = 8
+ws-icon-8 = 9
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
@@ -243,23 +248,23 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${module/bspwm.label-focused-background}
 label-focused-underline = ${module/bspwm.label-focused-underline}
 label-focused-padding = ${module/bspwm.label-focused-padding}
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %name%
 label-unfocused-padding = ${module/bspwm.label-occupied-padding}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %name%
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
@@ -342,44 +347,9 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 
-[module/wlan2]
-type = internal/network
-interface = ${env:WIFI_INTERFACE:wlp2s0}
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid% - %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-
 [module/eth]
 type = internal/network
 interface = enp0s25
-interval = 3.0
-
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-[module/eth2]
-type = internal/network
-interface = enp0s31f6
 interval = 3.0
 
 format-connected-prefix = " "
@@ -470,34 +440,6 @@ scroll-down = ~/.config/polybar/pavolume.sh --down
 
 
 [module/battery1]
-type = internal/battery
-; $ ls -1 /sys/class/power_supply/
-battery = BAT1
-adapter = AC
-full-at = 100
-time-format = %H:%M
-
-format-charging = <label-charging>
-label-charging = %percentage%% %time%
-
-format-discharging = <label-discharging>
-label-discharging = %percentage%% %time%
-
-format-full-prefix = 
-format-full-prefix-foreground = ${colors.blue}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.primary}
-animation-charging-framerate = 750
-
-[module/battery2]
 type = internal/battery
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
