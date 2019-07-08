@@ -1,6 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/home/bryan/Downloads/dotfiles-master/sh'
-let g:netrw_dirhist_2='/home/bryan/Downloads/dotfiles-master'
-let g:netrw_dirhist_3='/home/bryan/Downloads/dotfiles-master/.config'
-let g:netrw_dirhist_4='/home/bryan/Downloads/dotfiles-master/.config/dunst'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/bryan/.config'

@@ -1,0 +1,1 @@
+wget -i ~/sh/LinksJW
