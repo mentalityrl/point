@@ -30,7 +30,7 @@ x-scheme-handler/unknown=opera.desktop
 [Added Associations]
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=userapp-urxvt -e sc-im-YJ9LLZ.desktop;
 text/plain=code.desktop;
-inode/directory=exo-file-manager.desktop
+inode/directory=gparted.desktop;exo-file-manager.desktop;
 x-scheme-handler/trash=exo-file-manager.desktop
 video/x-matroska=mpv.desktop;
 x-scheme-handler/http=exo-web-browser.desktop
@@ -44,4 +44,6 @@ application/x-extension-shtml=chromium.desktop;
 application/xhtml+xml=chromium.desktop;
 application/x-extension-xhtml=chromium.desktop;
 application/x-extension-xht=chromium.desktop;
-
+application/zip=org.gnome.Nautilus.desktop;
+application/x-7z-compressed=org.gnome.Nautilus.desktop;
+application/pdf=chromium.desktop;

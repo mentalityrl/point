@@ -1,0 +1,42 @@
+2019-07-04 12:39
+
+
+2019-07-04 12:39
+
+
+2019-07-06 21:08
+
+Management
+    openvpn
+    portainers 9000
+    oubror
+Media
+    jackett 9117
+    ombi 3579
+    radarr 7878
+    sonarr 8989
+    tatutli 8181
+    jellyfin host
+
+Self-hosted
+    cloudflare
+    letsencrypt 80, 443
+    hastebin 7777
+    nextcloud 443
+
+
+Monitor
+    glances 61208, 61209
+    grafna 3000
+    influxdb 8086
+    netdata 19999
+
+Downloaders
+    qbit 6881  
+    sab 8080
+    hydra2 5076
+
+Syncing
+    duplicati 
+    syncthing
+

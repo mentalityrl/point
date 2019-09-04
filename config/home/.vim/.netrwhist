@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/bryan/.config'
+let g:netrw_dirhist_2='/etc/netctl/interfaces'
+let g:netrw_dirhist_3='/home/bryan/.local/lib/python3.7/site-packages/owncloud'
+let g:netrw_dirhist_4='/usr/bin'
+let g:netrw_dirhist_5='/home/bryan'
+let g:netrw_dirhist_6='/home/bryan/.config'
+let g:netrw_dirhist_7='/home/bryan/.config/nvim'

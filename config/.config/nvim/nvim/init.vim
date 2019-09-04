@@ -10,6 +10,8 @@ set rtp+=~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
 
 
+" Indent guides
+Plug 'Yggdroot/indentLine'
 
 " Multiple cusror mode
 Plug 'terryma/vim-multiple-cursors'
@@ -37,9 +39,6 @@ Plug 'davidhalter/jedi-vim'
 Plug 'jiangmiao/auto-pairs'
 " Tagbar
 Plug 'majutsushi/tagbar'
-
-" Indent guides
-Plug 'nathanaelkane/vim-indent-guides'
 
 " Rainbow parenthesis
 Plug 'kien/rainbow_parentheses.vim'

@@ -1,0 +1,7 @@
+2019-07-17 18:10
+
+.ssh directory: 700 (drwx------)
+public key ( .pub file): 644 (-rw-r--r--)
+private key ( id_rsa ): 600 (-rw-------)
+lastly your home directory should not be writeable by the group or others (at most 755 (drwxr-xr-x) ).
+

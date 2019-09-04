@@ -1,0 +1,4 @@
+2019-07-09 20:56
+
+Start simple with Ansible, create an update playbook and small inventory. Have Ansible update your hosts, than work out from there. You can slightly automate the SSH fingerprint import by using ssh-keyscan, use ssh-keypass login with your password to run ssh-copy-id to import your SSH key to the host (eg ssh-keyscan -H 192.168.0.1 >> ~/.ssh/known_hosts&&sshpass -f ~/password.txt ssh-copy-id gnulinuxcow@192.168.0.1)
+

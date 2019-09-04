@@ -1,0 +1,5 @@
+2019-07-17 00:29
+
+To tar a folder: tar -pczvf filename.tar.gz /path/to/folder
+To untar a folder: tar -xvf file.tar.gz
+

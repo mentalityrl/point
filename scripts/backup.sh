@@ -11,12 +11,15 @@ cp -r ~/.xinitrc ~/point/config/home/
 cp -r ~/.Xresources ~/point/config/home/
 cp -r ~/.vim ~/point/config/home/
 cp -r ~/.Xmodmap ~/point/config/home/
+cp -r ~/.oh-my-zsh ~/point/config/home/
+cp -r ~/.vscode ~/point/config/home/
 
 ########## .config ##########
 
 cp -r ~/.config/wal ~/point/config/.config/
 cp -r ~/.config/htop ~/point/config/.config/
 cp -r ~/.config/neofetch ~/point/config/.config/
+cp -r ~/.config/hmm ~/point/config/.config/
 cp -r ~/.config/polybar ~/point/config/.config/
 cp -r ~/.config/ranger ~/point/config/.config/
 cp -r ~/.config/nvim ~/point/config/.config/nvim
@@ -30,6 +33,9 @@ cp -r ~/.config/compton/ ~/point/config/.config/
 cp -r ~/.config/rofi/ ~/point/config/.config/
 cp -r ~/.config/gtk-3.0/ ~/point/config/.config/
 cp -r ~/.config/vlc/ ~/point/config/.config/
+cp -r ~/.config/i3 ~/point/config/.config/
+cp -r ~/.config/termite ~/point/config/.config/
+cp -r ~/.config/vlc ~/point/config/.config/
 
 ########## /etc ##########
 cp /etc/locale.gen ~/point/config/etc/
