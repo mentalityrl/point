@@ -13,6 +13,7 @@ cp -r ~/.vim ~/point/config/home/
 cp -r ~/.Xmodmap ~/point/config/home/
 cp -r ~/.oh-my-zsh ~/point/config/home/
 cp -r ~/.vscode ~/point/config/home/
+cp -r ~/.xbindkeysrc ~/point/config/home/
 
 ########## .config ##########
 
@@ -34,7 +35,11 @@ cp -r ~/.config/rofi/ ~/point/config/.config/
 cp -r ~/.config/gtk-3.0/ ~/point/config/.config/
 cp -r ~/.config/vlc/ ~/point/config/.config/
 cp -r ~/.config/i3 ~/point/config/.config/
+cp -r ~/.config/bspwm ~/point/config/.config/
+cp -r ~/.config/sxhkd ~/point/config/.config/
+cp -r ~/.config/compton ~/point/config/.config/
 cp -r ~/.config/termite ~/point/config/.config/
+cp -r ~/.config/code ~/point/config/.config/
 cp -r ~/.config/vlc ~/point/config/.config/
 
 ########## /etc ##########

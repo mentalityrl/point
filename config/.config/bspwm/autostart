@@ -1,0 +1,55 @@
+#!/bin/bash
+
+PATH=$PATH:$HOME/point/scripts
+export PATH
+
+# Set Wallpaper
+wal -i ~/Wallpaper &
+
+# Bluetooth
+# blueman-applet &
+
+# Fix java applications
+wmname LG3D
+
+# Load Xresources Config
+xrdb -merge ~/.Xresources
+
+# Load Custom Keymapping
+xmodmap ~/.Xmodmap
+
+# Disable Screen Timeout
+#xset -dpms
+#xset s off
+
+# Enable USB Automount
+udiskie -a -t &
+
+# Set Volume To %10
+amixer set Master 60%
+
+# Start Policy Daemon
+# lxqt-policykit-agent &
+
+# Start Compton Screen Composition
+# compton --config ~/.config/compton/solid.conf &
+
+# Set Mouse Timeout To 1 Second
+unclutter --timeout 1 &
+
+# Set Xorg Cursor Theme
+xsetroot -cursor_name left_ptr &
+
+# Start Notification Daemon
+sh ~/point/scripts/dunst.sh &
+
+# Start Polybar Daemon
+sh ~/.config/polybar/launch.sh &
+
+#syncthing &
+#chromium &
+#discord &
+# subl3 &
+# Hide Bar
+# sh /usr/local/bin/bar.sh
+# syncthing-gtk &

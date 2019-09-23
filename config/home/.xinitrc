@@ -1,2 +1,4 @@
 setxkbmap -option "caps:swapescape"
-exec i3
+xbindkeys
+exec bspwm
+

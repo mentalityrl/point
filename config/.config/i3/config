@@ -93,7 +93,7 @@ set $w1 1: term
 set $w2 2: brwsr
 set $w3 3: chat
 set $w4 4: video
-set $w5 5: virt
+set $w5 5: code
 set $w6 6: 6
 set $w7 7: 7
 set $w8 8: 8

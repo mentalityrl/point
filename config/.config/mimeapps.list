@@ -26,6 +26,8 @@ application/x-extension-xht=chromium.desktop
 x-scheme-handler/mailto=chromium.desktop
 x-scheme-handler/about=opera.desktop
 x-scheme-handler/unknown=opera.desktop
+x-scheme-handler/kite=kite-copilot.desktop
+x-scheme-handler/tg=telegramdesktop.desktop
 
 [Added Associations]
 application/vnd.openxmlformats-officedocument.spreadsheetml.sheet=userapp-urxvt -e sc-im-YJ9LLZ.desktop;

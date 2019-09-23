@@ -9,9 +9,28 @@ source ~/.vimrc
 set rtp+=~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
 
+" Kite Python Autocomplete
+let g:kite_tab_complete=1
+set completeopt+=menuone
+set completeopt-=preview
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2  " always display the status line"
+
+" Smooth Scrolling
+Plug 'yuttie/comfortable-motion.vim'
+
+" fzf file directories
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Indent guides
 Plug 'Yggdroot/indentLine'
+
+" File manager
+Plug 'scrooloose/nerdtree'
+
+" nerdtree tabs
+Plug 'jistr/vim-nerdtree-tabs'
 
 " Multiple cusror mode
 Plug 'terryma/vim-multiple-cursors'
@@ -22,18 +41,18 @@ Plug 'neomake/neomake'
 " Formatting
 Plug 'sbdchd/neoformat'
 
-" Async autocompletion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Completion from other opened files
-
-Plug 'Shougo/context_filetype.vim'
-" Python autocompletion
-
-Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
-
-" Just to add the python go-to-definition and similar features, autocompletion
-" from this plugin is disabled
-Plug 'davidhalter/jedi-vim'
+"" Async autocompletion
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"" Completion from other opened files
+"
+"Plug 'Shougo/context_filetype.vim'
+"" Python autocompletion
+"
+"Plug 'zchee/deoplete-jedi', { 'do': ':UpdateRemotePlugins' }
+"
+"" Just to add the python go-to-definition and similar features, autocompletion
+"" from this plugin is disabled
+"Plug 'davidhalter/jedi-vim'
 
 " Automatically close parenthesis, etc
 Plug 'jiangmiao/auto-pairs'
@@ -105,6 +124,23 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"-------------------
+" Nerd Tree
+"-------------------
+map `` :NERDTreeToggle<CR>
+map ]] :bnext<CR>
+map [[ :bprevious<CR>
+" Open nerdtree automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"" Open automatically on folder
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+"" Close nvim if nerdtree is last opened
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
 
 "-------------------
 " Vim indents
